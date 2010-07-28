@@ -1,3 +1,18 @@
 == Media_Script_Utility
 
-You should document your project here.
+README
+
+### CHANGELOG ###
+
+  v0.1.x
+    
+    v0.1.0(current)
+      55de397 First working version
+
+### INSTALLATION ###
+
+1) Install ruby(tested on 1.8.7, but any recent version should work).
+2) Install the wxruby, wx_sugar, and Pport gems.
+3) Unzip the files into a directory of your choosing.
+4) Make the file main.rbw executable.
+5) Run main.rbw to start the program.
