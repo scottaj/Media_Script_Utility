@@ -11,8 +11,8 @@ include GUI
 
 class MediaCueApp < App
     def on_init
-        t = Timer.new(self, 55)
-        evt_timer(55) {Thread.pass}
+        t = Timer.new(self, 101)
+        evt_timer(101) {Thread.pass}
         t.start(10)
         CueGUIEvent.new.show
     end
