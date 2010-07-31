@@ -45,23 +45,27 @@ module GUI
             @player.get_best_size
         end
 
-        # Plays the loaded media file 
+        # Plays the loaded media file. Does nothing if no file is loaded.
         def play()
             @player.play if @media_loaded == true
         end
 
+        # Pauses the loaded media file. Does nothing if no file is loaded.
         def pause()
             @player.pause if @media_loaded == true
         end
 
+        # Stops the loaded media file. Does nothing if no file is loaded.
         def stop()
             @player.stop if @media_loaded == true
         end
 
+        # Seeks time seconds from the beginning of the media.
         def seek(time)
             @player.seek(time) if @media_loaded == true
         end
 
+        # Tells the current playback time in milliseconds.
         def tell()
             @player.tell if @media_loaded == true
         end
