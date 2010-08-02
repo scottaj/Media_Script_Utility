@@ -19,7 +19,6 @@ module GUI
         # Initializes the media player.
         def initialize
             super(nil, :title => "Movie Screen")
-
             @player = MediaCtrl.new(self)
             @media_state = -1
             @media_loaded = false
