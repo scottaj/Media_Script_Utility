@@ -6,7 +6,18 @@ README
 
   v0.1.x
     
-    v0.1.0(current)
+    v0.1.1(current)
+      e06589a Added file to hold script class
+      a480562 Added widget functionality.
+      df964a4 Added event code to update time display widgets
+      c41e9af Documented MediaPlayer functions
+      95c9757 Added media playing code.
+      7e5b055 Changed timer ID
+      11891a1 Moved image files.
+      a14be27 Updated changelog
+      7121def Adjusted GUI layout.
+
+    v0.1.0
 
         35c2d70 Updated README
         55de397 First working version
