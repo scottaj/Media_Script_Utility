@@ -1,12 +1,10 @@
-# Copyright(c) 2010 Al Scott
-# License details can be found in the LICENSE file.
-#
+
 # This class was automatically generated from XRC source. It is not
 # recommended that this file is edited directly; instead, inherit from
 # this class and extend its behaviour there.  
 #
 # Source file: MediaCue.xrc 
-# Generated at: Wed Jul 28 13:43:03 -0600 2010
+# Generated at: Mon Aug 02 13:36:59 -0600 2010
 
 class CueGUI < Wx::Frame
 	
@@ -14,12 +12,12 @@ class CueGUI < Wx::Frame
               :tools_conf, :menu_help, :help_bug, :song_name_text,
               :song_artist_text, :song_album_text, :song_time_slider,
               :total_time, :last_cue_btn, :rwd_btn, :play_btn,
-              :pause_btn, :ffw_btn, :next_cue_btn, :subsec_btn_0,
-              :subsec_btn_1, :subsec_btn_2, :subsec_btn_3,
-              :subsec_btn_4, :subsec_btn_5, :subsec_btn_6,
-              :subsec_btn_7, :subsec_btn_8, :subsec_btn_9,
-              :write_out_chk, :beep_chk, :pause_chk, :cue_list,
-              :edit_btn
+              :pause_btn, :stop_btn, :ffw_btn, :next_cue_btn,
+              :subsec_btn_0, :subsec_btn_1, :subsec_btn_2,
+              :subsec_btn_3, :subsec_btn_4, :subsec_btn_5,
+              :subsec_btn_6, :subsec_btn_7, :subsec_btn_8,
+              :subsec_btn_9, :write_out_chk, :beep_chk, :pause_chk,
+              :cue_list, :edit_btn
 	
 	def initialize(parent = nil)
 		super()
@@ -55,6 +53,7 @@ class CueGUI < Wx::Frame
 		@rwd_btn = finder.call("rwd_btn")
 		@play_btn = finder.call("play_btn")
 		@pause_btn = finder.call("pause_btn")
+		@stop_btn = finder.call("stop_btn")
 		@ffw_btn = finder.call("ffw_btn")
 		@next_cue_btn = finder.call("next_cue_btn")
 		@subsec_btn_0 = finder.call("subsec_btn_0")
