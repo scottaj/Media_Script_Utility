@@ -27,6 +27,7 @@ module GUI
                     end
                 else
                     @total_time.set_label("0:00")
+                end
           
             end
             media_t.start(75)
@@ -34,8 +35,11 @@ module GUI
 
             evt_close()                         {quit_program()}
 
+            evt_menu(ID_NEW)                    {new_script}
+
             evt_button(@play_btn)               {play_script()}
             evt_button(@pause_btn)              {pause_script()}
+            evt_button(@stop_btn)               {stop_script()}
         end
 
         def quit_program()
@@ -77,5 +81,8 @@ module GUI
             @media_player.pause unless @media_player.media_state == 0
         end
 
+        def stop_script()
+            @media_player.stop unless @media_player.media_state == -1
+        end
     end
 end
