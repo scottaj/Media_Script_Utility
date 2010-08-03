@@ -1,8 +1,9 @@
 # Copyright(c) 2010 Al Scott
 # License details can be found in the LICENSE file.
 
-require "rubygems"
-require "wx"
+require 'rubygems'
+require 'wx'
+require 'mp3info'
 
 include Wx
 
@@ -22,6 +23,7 @@ module GUI
             @player = MediaCtrl.new(self)
             @media_state = -1
             @media_loaded = false
+            @file_data = ["", "", ""]
 
             @player.set_volume(1.0)
             @player.show_player_controls(MEDIACTRLPLAYERCONTROLS_NONE)
@@ -38,6 +40,16 @@ module GUI
         # If the media file is a video then a screen is displayed to
         # play the movie.
         def load(media)
+            if @player.match(/.+\.mp3/i)
+                Mp3Info.open("myfile.mp3") do |mp3|
+                    @file_data[0] = mp3.tag.title
+                    @file_data[1] = mp3.tag.artist
+                    @file_data[2] = mp3.tag.album
+                end
+            else
+                @file_data[0] = media
+            end
+
             @media_loaded = false
             @player.load(media)
             self.show if media.match(/.+\.(avi|divx|flv|mov|mp4|mpeg|wmv)/i)
