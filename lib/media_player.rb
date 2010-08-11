@@ -23,6 +23,7 @@ module GUI
             @player = MediaCtrl.new(self)
             @media_state = -1
             @media_loaded = false
+            @media_length = 0
             @file_data = ["", "", ""]
 
             @player.set_volume(1.0)
@@ -34,14 +35,14 @@ module GUI
             evt_media_stop(@player)         {@media_state = -1}
         end
 
-        attr_reader :media_state, :media_loaded
+        attr_reader :media_state, :media_loaded, :media_length, :file_data
 
         # Loads media file named by <i>media</i>.
         # If the media file is a video then a screen is displayed to
         # play the movie.
         def load(media)
-            if @player.match(/.+\.mp3/i)
-                Mp3Info.open("myfile.mp3") do |mp3|
+            if media.match(/.+\.mp3/i)
+                Mp3Info.open(media) do |mp3|
                     @file_data[0] = mp3.tag.title
                     @file_data[1] = mp3.tag.artist
                     @file_data[2] = mp3.tag.album
@@ -54,6 +55,8 @@ module GUI
             @player.load(media)
             self.show if media.match(/.+\.(avi|divx|flv|mov|mp4|mpeg|wmv)/i)
             @player.get_best_size
+
+            @media_length = @player.length
         end
 
         # Plays the loaded media file. Does nothing if no file is loaded.
