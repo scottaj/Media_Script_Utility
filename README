@@ -5,17 +5,29 @@ README
 ### CHANGELOG ###
 
   v0.1.x
-    
-    v0.1.1(current)
-      e06589a Added file to hold script class
-      a480562 Added widget functionality.
-      df964a4 Added event code to update time display widgets
-      c41e9af Documented MediaPlayer functions
-      95c9757 Added media playing code.
-      7e5b055 Changed timer ID
-      11891a1 Moved image files.
-      a14be27 Updated changelog
-      7121def Adjusted GUI layout.
+
+    v0.1.2(current)
+
+        8be34de Updated README
+        d1de69f Added stop button to the main GUI window
+        f960e7f Added event handler for stop button
+        e832f4d Added support for getting file info from mp3 files
+        c4666d4 Added Cue class and methods
+        17c23b7 Added methods to CueScript class
+        be6a19e Changed Cues and scripts to facilitate numbering of cues.
+        7889b87 Added code to iterate over and execute cues and fixed display issues.
+
+    v0.1.1
+
+        e06589a Added file to hold script class
+        a480562 Added widget functionality.
+        df964a4 Added event code to update time display widgets
+        c41e9af Documented MediaPlayer functions
+        95c9757 Added media playing code.
+        7e5b055 Changed timer ID
+        11891a1 Moved image files.
+        a14be27 Updated changelog
+        7121def Adjusted GUI layout.
 
     v0.1.0
 
