@@ -13,16 +13,19 @@ class Cue
     # <i>length</i>: The length in milliseconds of the cue.
     # <i>value</i>: The value of the cue, an integer from 0-255.
     # <i>comment</i>: A comment for the cue.
-    def initialize(length, value, comment)
+    def initialize(length, value, comment, num)
         @length = length
         @value = value
         @comment = comment
+        @num = num
     end
+
+    attr_accessor :num
 
     # Execute the cue.
     def exec()
-        yield @value, @comment
+        yield @value, @comment, @num
         sleep((length / 1000).to_f)
-        yield nil, nil
+        yield nil, nil, @num
     end
 end
